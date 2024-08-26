@@ -21,6 +21,7 @@ export default function LoginPage() {
     })
     .then((res) => {
       setCompanyData(res.data);
+      console.log(res.data);
       router.push('/company');
     })
     .catch((error) => {

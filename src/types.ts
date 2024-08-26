@@ -8,6 +8,17 @@ interface Modules {
   config: boolean
 }
 
+export interface SectionCard {
+  card1: boolean;
+  card2: boolean;
+  card3: boolean;
+  card4: boolean;
+}
+export interface SectionHeader {
+  card1: boolean;
+  card2: boolean;
+}
+
 export interface CompanyData {
   id: string;
   username: string;
@@ -21,6 +32,9 @@ export interface CompanyData {
     borderColor: string;
   };
   modules: Modules;
+  content: {
+    sectionCards: SectionCard | SectionHeader;
+  };
 }
 
 export interface LoginResponse {

@@ -1,10 +1,17 @@
+'use client';
+
+import { useCompany } from "@/context/CompanyContext";
+import AgroHidrica from "../components/AgroHidrica";
+import ArgosComponent from "../components/ArgosComponent";
 
 
 export default function Company() {
+  const { companyData } = useCompany();
+  
   return (
-    <div>
-      <h2>Dashboard da Empresa</h2>
-      <p>Bem-vindo à plataforma da sua empresa.</p>
-    </div>
+    <>
+      {companyData?.company === 'agro_hidric' && <AgroHidrica />}
+      {companyData?.company === 'argos_monitoring' && <ArgosComponent data={companyData}  />}
+    </>
   );
 }
